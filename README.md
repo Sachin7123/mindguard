@@ -40,23 +40,6 @@ MindGuard is an end-to-end, real-time NLP dashboard that monitors Reddit posts r
 
 ---
 
-## 📁 Project Structure
-
-mindguard/
-├── app/
-│ └── dashboard.py # Main Streamlit UI
-├── data/
-│ └── reddit_bert_sentiment.csv # Final labeled dataset
-├── .streamlit/
-│ └── config.toml # UI theming
-├── screenshots/
-│ └── mindguard_dashboard.png # Dashboard visual
-├── requirements.txt
-├── README.md
-├── .gitignore
-
----
-
 ## 🧪 How to Run Locally
 
 ```bash
