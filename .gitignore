@@ -1,7 +1,17 @@
-# .gitignore
+# Python
 __pycache__/
-*.csv
-*.json
-.env
+*.pyc
+*.pyo
+*.pyd
+env/
 venv/
-.ipynb_checkpoints/
+*.env
+
+# Jupyter
+.ipynb_checkpoints
+
+# Streamlit cache
+.streamlit/config.toml
+
+# System
+.DS_Store
