@@ -1,19 +1,73 @@
-# 🧠 MindGuard – Mental Health Sentiment Analyzer (Reddit Edition)
+# 🧠 MindGuard – Mental Health Sentiment Analyzer (Reddit NLP Dashboard)
 
-This project analyzes Reddit posts related to mental health using NLP and visualizes sentiment through a web dashboard.
+MindGuard is an end-to-end, real-time NLP dashboard that monitors Reddit posts related to mental health. It uses both **TextBlob** and **BERT (Transformer)** models to detect signs of anxiety, depression, and emotional distress. Built with **Streamlit**, the dashboard offers sentiment comparison, filters, and rich visual analytics.
 
-## 🔍 Sources
+![MindGuard Dashboard](./screenshot/sc-1.png)
 
-- Reddit (via r/depression, r/anxiety, etc.)
+---
 
-## 📦 Tech Stack
+## 🧠 Project Motivation
 
-- Python, PRAW, TextBlob, Pandas, MongoDB
-- Streamlit for dashboard
+> With rising mental health concerns globally, many people share their feelings anonymously online. By analyzing these expressions through natural language processing, MindGuard aims to assist researchers, moderators, or public health professionals in identifying signs of distress at scale.
 
-## 📁 Folder Overview
+---
 
-- `/src` – Core logic (scraper, sentiment, db)
-- `/data` – Raw post data (CSV)
-- `/app` – Dashboard UI
-- `/models` – Saved NLP models
+## 🔍 Features
+
+- ✅ Collects Reddit posts from mental health-focused subreddits
+- ✅ Cleans and fuses title + body text
+- ✅ Performs dual sentiment analysis using:
+  - **TextBlob** (lexicon-based)
+  - **BERT** (`cardiffnlp/twitter-roberta-base-sentiment`)
+- ✅ Filters posts by subreddit, model, or keywords
+- ✅ Visualizations: bar charts, pie charts, and summary cards
+- ✅ Highlights mismatches between TextBlob and BERT
+- ✅ Download the processed data as CSV
+
+---
+
+## 💻 Tech Stack
+
+| Layer         | Tools Used                           |
+| ------------- | ------------------------------------ |
+| Frontend      | Streamlit                            |
+| NLP Models    | TextBlob, Transformers (BERT)        |
+| Data Source   | Reddit (via Pushshift API)           |
+| Processing    | Python, Pandas, NumPy                |
+| Visualization | Streamlit, Matplotlib                |
+| Deployment    | Streamlit Cloud                      |
+| Storage       | CSV (MongoDB optional for extension) |
+
+---
+
+## 📁 Project Structure
+
+mindguard/
+├── app/
+│ └── dashboard.py # Main Streamlit UI
+├── data/
+│ └── reddit_bert_sentiment.csv # Final labeled dataset
+├── .streamlit/
+│ └── config.toml # UI theming
+├── screenshots/
+│ └── mindguard_dashboard.png # Dashboard visual
+├── requirements.txt
+├── README.md
+├── .gitignore
+
+---
+
+## 🧪 How to Run Locally
+
+```bash
+git clone https://github.com/Sachin7123/mindguard.git
+cd mindguard-nlp
+python -m venv venv
+# For Windows:
+venv\Scripts\activate
+# For macOS/Linux:
+source venv/bin/activate
+
+pip install -r requirements.txt
+streamlit run app/dashboard.py
+```
